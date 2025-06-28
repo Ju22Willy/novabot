@@ -54,20 +54,40 @@ client.on(Events.InteractionCreate, async interaction => {
       console.error(error);
     }
   } else if (interaction.isButton()) {
+    //cake/bday button
 		if (interaction.customId === "send-cake") {
-      await interaction.reply({ content: 'You sent a birthday cake to <@1279516012642963528>!', flags: MessageFlags.Ephemeral });
-      const personalGuild = interaction.client.guilds.cache.get('1380003469242404975');
+      await interaction.reply({ content: 'You sent a birthday cake to <@1069457575315243008>!', flags: MessageFlags.Ephemeral });
+      const personalGuild = interaction.client.guilds.cache.get('1278402411790078142');
       if (!personalGuild) {
         console.error("[bot] Personal guild not found. Make sure the bot is in the correct guild.");
         return;
       }
-      const cakeChannel = personalGuild.channels.cache.get('1384302020134965249');
+      const cakeChannel = personalGuild.channels.cache.get('1388200506266095686');
       if (!cakeChannel || !cakeChannel.isTextBased()) {
         console.error("[bot] Cake channel not found or is not a text channel.");
         return;
       }
-      await cakeChannel.send({ content: `<@${interaction.user.id}> sent a birthday cake to you, <@1279516012642963528>! 🎂` });
-    } else return;
+      await cakeChannel.send({ content: `<@${interaction.user.id}> sent a birthday cake to you, <@1069457575315243008>! 🎂` });
+    }
+
+    //test/ping button
+    else if (interaction.customId === "ping-jude") {
+      await interaction.reply({ content: 'you pinged <@1069457575315243008>!', flags: MessageFlags.Ephemeral });
+      const personalGuild = interaction.client.guilds.cache.get('1278402411790078142');
+      if (!personalGuild) {
+        console.error("[bot] Personal guild not found. Make sure the bot is in the correct guild.");
+        return;
+      }
+      const cakeChannel = personalGuild.channels.cache.get('1388200506266095686');
+      if (!cakeChannel || !cakeChannel.isTextBased()) {
+        console.error("[bot] Cake channel not found or is not a text channel.");
+        return;
+      }
+      await cakeChannel.send({ content: `<@${interaction.user.id}> pinged you, <@1069457575315243008>!` });
+    } 
+    
+    //add an if after this for another button
+    else return;
 	}
 });
 
