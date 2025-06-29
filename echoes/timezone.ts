@@ -21,7 +21,7 @@ export function echoEmbed(): EchoEmbed {
 }
 
 export function echoText(): string {
-  return '⋆✦⋆ nova\'s timezone! ⋆✦⋆\n' +
+  return '⋆✦⋆ jude\'s timezone! ⋆✦⋆\n' +
     'Hey! Here\'s some info on <@1069457575315243008>\'s timezone!\n' +
     'She is in Central Daylight Time, which is UTC-5.\n' +
     'Her 12:00 PM is <t:1751043600:t> in your timezone.';
